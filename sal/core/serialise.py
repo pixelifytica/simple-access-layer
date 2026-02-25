@@ -299,7 +299,7 @@ def _decode_array(d):
         raise InternalError('Malformed array data found during de-serialisation.')
 
     if encoding == 'base64':
-        return _np.fromstring(base64.b64decode(data), dtype=dtype).reshape(shape)
+        return _np.frombuffer(base64.b64decode(data), dtype=dtype).reshape(shape)
 
     if encoding == 'list':
         return _np.array(data, dtype=dtype)

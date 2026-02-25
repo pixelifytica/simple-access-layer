@@ -23,7 +23,7 @@
       };
       devShells = forAllSystems (system: {
         default = pkgs.${system}.mkShellNoCC {
-          packages = [ (pkgs.${system}.python3.withPackages (ps: [ ps.simple-access-layer ])) ];
+          packages = [ (pkgs.${system}.python3Packages.simple-access-layer) ];
         };
       });
     };
